@@ -19,5 +19,5 @@
 <Topic/Title>_<date>.<extension>
 
 ## Notas: 
-- Los directorios que no presentan el formato descrito en las reglas de nombrado porque no los consideramos ítems de configuración. 
+- Los directorios no presentan el formato descrito en las reglas de nombrado porque no los consideramos ítems de configuración. 
 La justificación de esto es que no van a ser elementos susceptibles a cambios una vez creados.

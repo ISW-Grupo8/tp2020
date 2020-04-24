@@ -13,7 +13,7 @@
 ## Estructura de directorios:
 ![alt text][estructura]
 
-[estructura]: https://github.com/ISW-Grupo8/tp2020/blob/master/images/estructura.png "Arbol de directorios"
+[estructura]: https://github.com/ISW-Grupo8/tp2020/blob/master/images/estructura.png_24-04-2020.png "Arbol de directorios"
 
 ## Regla de nombrado para ítems de configuración:
 <Topic/Title>_<date>.<extension>

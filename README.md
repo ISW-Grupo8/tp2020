@@ -1,8 +1,7 @@
 # Tp 3-4 2020 ISW Grupo 8
 
 
-*Tp2020
-**Readme.md
+
 ## Pasos a seguir:
 
 1. Definir una estructura de carpetas para un repositorio que sirva para brindar soporte a la cursada de la materia en este cuatrimestre

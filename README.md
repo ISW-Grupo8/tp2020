@@ -22,7 +22,3 @@
 ## Notas: 
 - Los directorios que no presentan el formato descrito en las reglas de nombrado porque no los consideramos ítems de configuración. 
 La justificación de esto es que no van a ser elementos susceptibles a cambios una vez creados.
-- Las reglas de nombrado comienzan a aplicarse en el directorio tp2020/docs/.docs/Práctico/Trabajos Evaluables/, porque a partir de aquí 
-aplicaremos lo relacionado a gestión de configuración.
-- Los directorios padre del directorio mencionado en la nota anterior están relacionados a material académico, razón por la cual no
-aplicaremos gestión de configuración.

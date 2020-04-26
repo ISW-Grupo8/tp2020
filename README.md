@@ -20,7 +20,7 @@
 [estructura]: https://github.com/ISW-Grupo8/tp2020/blob/master/images/estructura.png_24-04-2020.png "Arbol de directorios"
 
 ## Regla de nombrado para ítems de configuración:
-\<ID>\<Topic>_\<date>.\<extensión>
+\<ID>_\<Topic>_\<date>.\<extensión>
 
 ## Notas: 
 - Los directorios no presentan el formato descrito en las reglas de nombrado porque no los consideramos ítems de configuración. 

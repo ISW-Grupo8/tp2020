@@ -1,7 +1,7 @@
 # Grupo 8
 # Integrantes:
 - 76726 - Demasi, Pablo Sebastián	
-- 55121 - Pescetti, Sabrina Cecilia	
+- 55121 - Pescetti, Sabrina	
 - 77474 - Leonardi, Benjamin Maximiliano	
 - 77460 - Piguillem , Nahuel	
 - 75930 - Wismer, Axel Francis	
@@ -20,7 +20,11 @@
 [estructura]: https://github.com/ISW-Grupo8/tp2020/blob/master/images/estructura.png_24-04-2020.png "Arbol de directorios"
 
 ## Regla de nombrado para ítems de configuración:
-\<ID>\_\<Topic>\_\<date>.\<extension>
+\<ID>\_\<Topic>\_\<datetime>.\<extension>
+
+- ID es único para cada Ítem de configuración
+- Topic está compuesto por TP \<Nro> - \<Palabra clave o breve descripción del ítem> 
+- datetime es la fecha y hora de la última modificación
 
 ## Notas: 
 - Los directorios no presentan el formato descrito en las reglas de nombrado porque no los consideramos ítems de configuración. 

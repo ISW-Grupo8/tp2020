@@ -5,9 +5,9 @@
 - 77474 - Leonardi, Benjamin Maximiliano	
 - 77460 - Piguillem , Nahuel	
 - 75930 - Wismer, Axel Francis	
-- 75441 - Toledo Alonso, Rodrigo	
+- 75441 - Toledo Alonso, Rodrigo
+	
 ## Pasos a seguir:
-
 1. Definir una estructura de directorios para un repositorio que sirva para brindar soporte a la cursada de la materia en este cuatrimestre
 2. Seleccionar e identificar todos los ítems de configuración que mantendrán bajo control de versiones indicando: nombre del ítem, regla de nombrado con extensión del archivo y etiquetas en el caso de ser necesarias, y finalmente la ruta completa en donde serán almacenados dentro de su estructura de repositorio.
 3. Definir el criterio para la creación de una línea base (o varias, según lo que definan).

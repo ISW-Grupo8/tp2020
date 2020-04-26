@@ -1,7 +1,11 @@
-# Tp 3-4 2020 ISW - Grupo 8
-
-
-
+# Grupo 8
+# Integrantes:
+- 76726 - Demasi, Pablo Sebastián	
+- 55121 - Pescetti, Sabrina	
+- 77474 - Leonardi, Benjamin Maximiliano	
+- 77460 - Piguillem , Nahuel	
+- 75930 - Wismer, Axel Francis	
+- 75441 - Toledo Alonso, Rodrigo	
 ## Pasos a seguir:
 
 1. Definir una estructura de directorios para un repositorio que sirva para brindar soporte a la cursada de la materia en este cuatrimestre

@@ -1,7 +1,7 @@
 # Grupo 8
 # Integrantes:
 - 76726 - Demasi, Pablo Sebastián	
-- 55121 - Pescetti, Sabrina	
+- 55121 - Pescetti, Sabrina Cecilia	
 - 77474 - Leonardi, Benjamin Maximiliano	
 - 77460 - Piguillem , Nahuel	
 - 75930 - Wismer, Axel Francis	

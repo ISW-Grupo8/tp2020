@@ -3,7 +3,7 @@
 - 76726 - Demasi, Pablo Sebastián	
 - 55121 - Pescetti, Sabrina	
 - 77474 - Leonardi, Benjamin Maximiliano	
-- 77460 - Piguillem , Nahuel	
+- 77460 - Piguillem, Nahuel	
 - 75930 - Wismer, Axel Francis	
 - 75441 - Toledo Alonso, Rodrigo	
 ## Pasos a seguir:

@@ -2,10 +2,10 @@
 
 ## Importante:
 - Será necesario que tengamos instalado un cliente git en nuestro sistema operativo
-- El archivo se creará vacío en el directorio "CIs"
+- El archivo se creará vacío en el directorio "src"
 
 ## Pasos
-1. Navegar en su repositorio local hasta el directorio "CIs" 
+1. Navegar en su repositorio local hasta el directorio "src" 
 2. Click derecho > "Git Bash Here"
 ![alt text][abrirconsola]
 

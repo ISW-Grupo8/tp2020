@@ -10,8 +10,9 @@
 ![alt text][abrirconsola]
 
 [abrirconsola]: https://github.com/ISW-Grupo8/tp2020/blob/master/images/2_Abrir%20consola_27-04-2020%2014-29.png "Abrir consola"
-3. Ingresar "./scriptcreacion" en la ventana de comandos.
-4. Ingresar nombre y extensión del archivo a crear.
+
+3. Ingresar "./scriptcreacion" en la ventana de comandos
+4. Ingresar nombre y extensión del archivo a crear
 ## Ejemplo
 ![alt text][consola]
 

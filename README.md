@@ -26,6 +26,8 @@
 - Nombre es una palabra clave o frase descriptiva del IC
 - Datetime es la fecha y hora de creación
 
+#### Los ítems de configuración tienen el directorio "CIs" como directorio base.
+
 ## Notas: 
 - Los directorios no presentan el formato descrito en las reglas de nombrado porque no los consideramos ítems de configuración. 
 La justificación de esto es que no van a ser elementos susceptibles a cambios una vez creados.

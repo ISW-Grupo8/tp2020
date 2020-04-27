@@ -12,10 +12,12 @@ echo -n "Ingrese el nombre del archivo: "
 read nombre
 echo -n "Ingrese la extensión: "
 read ext 
-#idactual=$(cat idregister | wc -l)
-id=$(find ./ -type f | wc -l)
-#idnuevo=$(expr $idactual + 1)
-touch $id\_$nombre_$(date +'%d-%m-%Y-%H:%M').$ext
+id=$(echo $(find ./ -type f | wc -l))
 
+fecha=$(date +'%d-%m-%Y-%H:%M')
+nombredef=$id\_$nombre\_$fecha
+#nom=$(echo -e $nombredef)
+IFS='\n'
+touch $nombredef
 echo -e "\nArchivo creado con éxito en: " $(pwd)
 

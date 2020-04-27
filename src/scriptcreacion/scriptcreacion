@@ -12,7 +12,7 @@ echo -n "Ingrese el nombre del archivo: "
 read nombre
 echo -n "Ingrese la extensión: "
 read ext 
-id=$(echo $(find ./ -type f | wc -l))
+id=$(echo $(find ../../docs/CIs -type f | wc -l))
 
 fecha=$(date +'%d-%m-%Y %H-%M')
 nombredef=$id\_$nombre\_$fecha\.$ext

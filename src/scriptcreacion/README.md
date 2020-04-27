@@ -3,6 +3,7 @@
 ## Importante:
 - Será necesario que tengamos instalado un cliente git en nuestro sistema operativo
 - El archivo se creará vacío en el directorio "scriptcreacion"
+- Luego de su creación, el archivo debe ser movido al directorio deseado
 
 ## Pasos
 1. Navegar en su repositorio local hasta el directorio "scriptcreacion" 

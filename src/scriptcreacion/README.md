@@ -2,10 +2,10 @@
 
 ## Importante:
 - Será necesario que tengamos instalado un cliente git en nuestro sistema operativo
-- El archivo se creará vacío en el directorio "src"
+- El archivo se creará vacío en el directorio "scriptcreacion"
 
 ## Pasos
-1. Navegar en su repositorio local hasta el directorio "src" 
+1. Navegar en su repositorio local hasta el directorio "scriptcreacion" 
 2. Click derecho > "Git Bash Here"
 ![alt text][abrirconsola]
 

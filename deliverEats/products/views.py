@@ -206,6 +206,7 @@ def remove_product_from_cart(request, pk):
     return redirect(APP_LABEL + 'product_cart')
 
 
+# todo ESTO HAY QUE REEMPLAZARLO
 @permission_required('products.product_buy')
 @require_POST
 def buy_products_from_cart(request):
@@ -227,3 +228,8 @@ class HistoryListView(custom.CustomListView):
 class PublicityDetailView(generic.DetailView):
     model = Publicity
     template_name = APP_NAME + '/publicity_detail.html'
+
+# TP5
+class CreateOrderView(custom.CustomCreateView):
+    pass
+

@@ -69,3 +69,28 @@ class Image(models.Model):
 
     def __str__(self):
         return self.product.name
+
+
+class Order(models.Model):
+    CITY_CHOICES = ((1, "Córdoba"), (2, "Río Cuarto"), (3, "Oncativo"), (4, "CarlosPaz"), (5, "Alta Gracia"),
+                    (6, "Villa General Belgrano"), (7, "Río Tercero"), (8, "Villa Giardino"), (9, "Oliva"),
+                    (10, "Río Segundo"))
+    city = models.PositiveIntegerField(u'Ciudad', choices=CITY_CHOICES)
+    street = models.CharField(u'Calle', max_length=40)
+    street_number = models.CharField(u'Numero', max_length=10)
+    reference = models.TextField(u'referencia', max_length=100, null=True, blank=True)
+
+#     Forma de pago
+    PAYMENT_METHOD = (('E', 'Efectivo'), ('T', 'Tarjeta'))
+    payment_method = models.CharField(u'Metodo de pago', choices=PAYMENT_METHOD)
+    immediate_delivery = models.BooleanField('Recibir lo antes posible')
+    delivery_time = models.DateTimeField(u'Fecha y hora de entrega')
+
+
+class Card(models.Model):
+    order = models.OneToOneField('Order', name="Orden", on_delete=models.CASCADE)
+    number = models.PositiveIntegerField(u'Numero de tarjeta')
+    name = models.CharField(u'Nombre del titular', max_length=40)
+    surname = models.CharField(u'Apellido del titular', max_length=40)
+    due_date = models.DateField(u'Fecha de vencimiento')
+    cvc = models.PositiveIntegerField(u'CVC')

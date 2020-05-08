@@ -82,7 +82,7 @@ class Order(models.Model):
 
 #     Forma de pago
     PAYMENT_METHOD = (('E', 'Efectivo'), ('T', 'Tarjeta'))
-    payment_method = models.CharField(u'Metodo de pago', choices=PAYMENT_METHOD)
+    payment_method = models.CharField(u'Metodo de pago', choices=PAYMENT_METHOD, max_length=1)
     immediate_delivery = models.BooleanField('Recibir lo antes posible')
     delivery_time = models.DateTimeField(u'Fecha y hora de entrega')
 

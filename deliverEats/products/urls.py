@@ -45,6 +45,6 @@ urlpatterns = [
     path('publicity/<int:pk>', PublicityDetailView.as_view(),
          name='publicity_detail'),
 
-    path('create/order', views.Create_Order, name='create_order')
+    path('create/order', views.create_Order, name='create_order')
 
 ]

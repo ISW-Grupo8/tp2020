@@ -1,13 +1,118 @@
 {% extends 'products/base.html' %} {% block app_content %}
 
+<style>
+	input[type="text"] {
+		/* Aca irian los estilos */
+	}
+</style>
+
 <div>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<h1>Header Crear Orden</h1>
+				<h1 style="background-color: DodgerBlue; padding: 10px;">
+					Checkout
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h3 style="background-color: MediumSeaGreen; padding: 5px;">
+					Dirección
+				</h3>
+
+				<label for="Ciudad">Ciudad</label>
+				<select id="ciudades" name="ciudades">
+					<option value="Cordoba">Cordoba</option>
+					<option value="Rio Cuarto">Rio Cuarto</option>
+					<option value="Oncativo">Oncativo</option>
+					<option value="Carlos Paz">Carlos Paz</option>
+					<option value="Alta Gracia">Alta Gracia</option>
+					<option value="Villa General Belgrano">Villa General Belgrano</option>
+					<option value="Rio Tercero">Rio Tercero</option>
+					<option value="Villa Giardino">Villa Giardino</option>
+					<option value="Oliva">Oliva</option>
+					<option value="Rio Segundo">Rio Segundo</option>
+				</select>
+				<br />
+
+				<label for="Calle">Calle</label>
+				<input type="text" name="calle" id="txt_ciudad" />
+				<br />
+
+				<label for="Numero">Numero</label>
+				<input type="number" name="numero" id="txt_numero" />
+				<br />
+
+				<label for="Referencia">Referencia</label>
+				<input type="text" name="referencia" id="txt_referencia" />
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h3 style="background-color: MediumSeaGreen; padding: 5px;">
+					Datos de Pago
+				</h3>
+
+				<label for="MetodoPago">Forma de Pago</label>
+				<select id="tipos_pago" name="tipos_pago">
+					<option value="Efectivo">Efectivo</option>
+					<option value="Tarjeta VISA">Tarjeta VISA</option>
+				</select>
+				<br />
+
+				<label for="Monto">Monto</label>
+				<input type="number" name="monto" id="txt_monto" />
+				<br />
+
+				<label for="Numero de la Tarjeta">Numero de la Tarjeta</label>
+				<input type="number" name="num_tarjeta" id="txt_num_tarjeta" />
+				<br />
+
+				<label for="Nombre del Titular">Nombre del Titular</label>
+				<input type="text" name="nom_titular" id="txt_nom_titular" />
+				<br />
+
+				<label for="Apellido del Titular">Apellido del Titular</label>
+				<input type="text" name="ape_titular" id="txt_ape_titular" />
+				<br />
+
+				<label for="Fecha de Vencimiento">Fecha de Vencimiento</label>
+				<input type="date" name="fecha_vec" id="date_fecha_vec" />
+				<br />
+
+				<label for="CVC">CVC</label>
+				<input type="number" name="cvc" id="txt_cvc" />
+				<br />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h3 style="background-color: MediumSeaGreen; padding: 5px;">Otros</h3>
+
+				<label for="Momento a Recibir">Momento a Recibir</label>
+				<select id="opc_recepcion" name="opc_recepcion">
+					<option value="Lo antes posible">Lo antes posible</option>
+					<option value="Determinar fecha y hora"
+						>Determinar fecha y hora</option
+					>
+				</select>
+				<br />
+
+				<label for="Fecha y Hora">Fecha y Hora</label>
+				<input
+					type="datetime-local"
+					name="fecha_recibir"
+					id="date_fecha_recibir"
+				/>
+				<br />
+
+				<button type="button" class="btn btn-primary">Confirmar Pedido</button>
+				<button type="button" class="btn btn-secondary">Cancelar Pedido</button>
 			</div>
 		</div>
 	</div>
 </div>
 
-{% endblock app_content %}
+{% endblock %}

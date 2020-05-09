@@ -126,6 +126,8 @@ class PublicityListView(custom.CustomListView):
         return self.model.objects.all().order_by('name')
 
 # Listas de objetos con barra de busqueda
+
+
 def get_product_queryset(query=None):
     queryset = []
     queries = query.split(" ")
@@ -156,7 +158,8 @@ class ProductSellListView(custom.CustomListView):
             return self.model.objects.all().order_by('name')
 
     def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(ProductSellListView, self).get_context_data(object_list=None, **kwargs)
+        context = super(ProductSellListView, self).get_context_data(
+            object_list=None, **kwargs)
         if self.request.GET:
             context['query'] = self.request.GET['q']
         return context
@@ -176,7 +179,8 @@ class ProductView(generic.CreateView):
 
     def form_valid(self, form):
         # Se crea un detalle de producto con la relacion al producto de la vista
-        product_detail = ProductDetail(product=get_object_or_404(Product, pk=self.kwargs['pk']))
+        product_detail = ProductDetail(
+            product=get_object_or_404(Product, pk=self.kwargs['pk']))
         # Se crea un formulario como instancia del del detalle del producto y se guarda
         form = ProductDetailForm(self.request.POST, instance=product_detail)
         product_detail = form.save()
@@ -230,6 +234,7 @@ class PublicityDetailView(generic.DetailView):
     template_name = APP_NAME + '/publicity_detail.html'
 
 # TP5
-class CreateOrderView(custom.CustomCreateView):
-    pass
 
+
+def Create_Order(request):
+    return render(request, 'products/create_order.html')

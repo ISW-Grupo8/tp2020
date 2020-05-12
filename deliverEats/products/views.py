@@ -244,3 +244,57 @@ def create_Order(request):
         form.fields['payment_amount'].min_value = int(round(request.user.client.total))
         return render(request, 'products/create_order.html', {'form': form, 'card_form':card_form})
     return render(request, 'products/no_product.html')
+
+
+class OrderSuccess(generic.TemplateView):
+    template_name = 'products/order_success.html'
+
+
+# class CreateOrder(generic.FormView):
+#     form_class = OrderForm
+#     def get(self, request, *args, **kwargs):
+#         if request.user.client.shopping_cart.all().exists():
+#             form = OrderForm()
+#             card_form = CardForm()
+#             form.fields['payment_amount'].initial = int(round(request.user.client.total))
+#             form.fields['payment_amount'].min_value = int(round(request.user.client.total))
+#             return render(request, 'products/create_order.html', {'form': form, 'card_form': card_form})
+#         return render(request, 'products/no_product.html')
+#
+#     def post(self, request, *args, **kwargs):
+#         print("aaaaaaaaaaaaaaaaaaaaaaaa")
+#         template_name = 'products/order_success.html'
+#         form = self.form_class(self.request.POST)
+#         context = {}
+#         context['amount'] = self.request.user.client.total
+#
+#         payment_amount = form.cleaned_data['payment_amount']
+#         if payment_amount > 0:
+#             context['payment_amount'] = form.cleaned_data['payment_amount'],
+#             context['change'] = context['payment_amount'] - context['amount'],
+#         print("algo")
+#         return render(request, 'products/order_success.html', context)
+#
+# @login_required
+# def create_Order(request):
+#     if request.user.client.shopping_cart.all().exists():
+#         if request.POST:
+#             template_name = 'products/order_success.html'
+#             context = {}
+#             context['amount'] = request.user.client.total
+#
+#             payment_amount = form.cleaned_data['payment_amount']
+#             if payment_amount > 0:
+#                 context['payment_amount'] = form.cleaned_data['payment_amount'],
+#                 context['change'] = context['payment_amount'] - context['amount'],
+#
+#             return render(request, 'products/order_success.html', context)
+#
+#         else:
+#             form = OrderForm()
+#             card_form = CardForm()
+#             form.fields['payment_amount'].initial = int(round(request.user.client.total))
+#             form.fields['payment_amount'].min_value = int(round(request.user.client.total))
+#             return render(request, 'products/create_order.html', {'form': form, 'card_form':card_form})
+#
+#     return render(request, 'products/no_product.html')

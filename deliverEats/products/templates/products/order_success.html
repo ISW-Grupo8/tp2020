@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+{% load static %}
+
+{% load products_tags %}
+
+<h1 class="display-4 text-center" style="padding: 10px;">
+	Pedido Realizado!
+</h1>
+<hr>
+
+<div class="text-center">
+    <img width=300 src="{% static 'success.png' %}">
+</div>
+
+{% endblock content %}

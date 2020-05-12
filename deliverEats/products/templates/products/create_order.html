@@ -9,6 +9,7 @@
 	}
 </style>
 
+
 <div>
 	<form class="container-fluid">
 		<div class="row my-2">
@@ -47,15 +48,15 @@
     {% endfor %}
 <div class="row">
   <div class="col">
-				<button type="submit" class="btn btn-primary mt-4 float-right ml-2">
-					Confirmar Pedido
-				</button>
-				<button type="button" class="btn btn-secondary mt-4 float-right">
-					Cancelar Pedido
-				</button>
-			</div>
-		</div>
-	</form>
+      <a class="btn btn-primary mt-4 float-right ml-2" href="{% url 'products:order_success' %}">
+          Confirmar Pedido
+      </a>
+      <button type="button" class="btn btn-secondary mt-4 float-right">
+          Cancelar Pedido
+      </button>
+  </div>
+</div>
+    </form>
 </div>
 
 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -88,7 +89,6 @@
     </form>
   </div>
 </div>
-
 {% endblock %}
 
 {% block scripts %}

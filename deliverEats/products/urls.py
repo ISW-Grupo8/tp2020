@@ -24,7 +24,7 @@ urlpatterns = [
     path('product/delete/<int:pk>',
          ProductDeleteView.as_view(), name='product_delete'),
     path('product/', ProductListView.as_view(), name='product_list'),
-    # Client-side
+    # Client-sideConfirmar
     path('product/sell', ProductSellListView.as_view(), name='product_sell_list'),
     path('product/<int:pk>', ProductView.as_view(), name='product_detail'),
     path('product/shopping_cart', CartListView.as_view(), name='product_cart'),
@@ -45,6 +45,6 @@ urlpatterns = [
     path('publicity/<int:pk>', PublicityDetailView.as_view(),
          name='publicity_detail'),
 
-    path('create/order', views.create_Order, name='create_order')
-
+    path('order/create', views.create_Order, name='create_order'),
+    path('order/success', views.OrderSuccess.as_view(), name='order_success')
 ]

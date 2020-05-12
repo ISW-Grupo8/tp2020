@@ -81,12 +81,11 @@ class Order(models.Model):
     reference = models.TextField(u'referencia', max_length=100, null=True, blank=True)
 
 #     Forma de pago
-    PAYMENT_METHOD = (('E', 'Efectivo'), ('T', 'Tarjeta'))
     IMMEDIATE_DELIVERY = ((True, 'Sí'), (False, 'No'))
-    immediate_delivery = models.BooleanField('Recibir lo antes posible', choices=IMMEDIATE_DELIVERY, default=IMMEDIATE_DELIVERY[0])
-
-    # immediate_delivery = models.BooleanField('Recibir lo antes posible',default=True,  null=True)
+    immediate_delivery = models.BooleanField('Recibir lo antes posible', choices=IMMEDIATE_DELIVERY,
+                                             default=IMMEDIATE_DELIVERY[0])
     delivery_time = models.DateTimeField(u'Fecha y hora de entrega', null=True, blank=True)
+    PAYMENT_METHOD = (('E', 'Efectivo'), ('T', 'Tarjeta'))
     payment_method = models.CharField(u'Metodo de pago', choices=PAYMENT_METHOD, max_length=1)
     payment_amount = models.PositiveIntegerField(u'¿Con cuanto vas a pagar?')
 

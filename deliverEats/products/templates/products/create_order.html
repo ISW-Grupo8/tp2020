@@ -1,4 +1,6 @@
-{% extends 'products/base.html' %} {% block app_content %}
+{% extends 'products/base.html' %}
+{% load crispy_forms_field %}
+{% block app_content %}
 
 <style>
 	input[type="text"] {
@@ -16,137 +18,32 @@
 			</div>
 		</div>
 		<div class="row my-2">
-			<div class="col">
-				<h3
-					style="
-						background-color: MediumSeaGreen;
-						padding: 8px;
-						border-radius: 25px;
-					"
-				>
+			<div class="col px-0">
+				<h3 class="px-4 py-2 border border-success rounded">
 					Dirección
 				</h3>
+      </div>
+    </div>
 
-				<label for="Ciudad" class="col-sm-2 col-form-label">Ciudad</label>
-				<select id="ciudades" name="ciudades">
-					<option value="Cordoba">Cordoba</option>
-					<option value="Rio Cuarto">Rio Cuarto</option>
-					<option value="Oncativo">Oncativo</option>
-					<option value="Carlos Paz">Carlos Paz</option>
-					<option value="Alta Gracia">Alta Gracia</option>
-					<option value="Villa General Belgrano">Villa General Belgrano</option>
-					<option value="Rio Tercero">Rio Tercero</option>
-					<option value="Villa Giardino">Villa Giardino</option>
-					<option value="Oliva">Oliva</option>
-					<option value="Rio Segundo">Rio Segundo</option>
-				</select>
-				<br />
+    {% for field in form.visible_fields %}
 
-				<label for="Calle" class="col-sm-2 col-form-label">Calle</label>
-				<input type="text" name="calle" id="txt_ciudad" />
-				<br />
-
-				<label for="Numero" class="col-sm-2 col-form-label">Numero</label>
-				<input type="number" name="numero" id="txt_numero" />
-				<br />
-
-				<label for="Referencia" class="col-sm-2 col-form-label"
-					>Referencia</label
-				>
-				<input type="text" name="referencia" id="txt_referencia" />
-				<br />
-			</div>
-		</div>
-		<div class="row">
-			<div class="col my-2">
-				<h3
-					style="
-						background-color: MediumSeaGreen;
-						padding: 5px;
-						padding: 8px;
-						border-radius: 25px;
-					"
-				>
+    <div class="form-group row {% if forloop.counter == 6 %}d-none{% endif %}">
+      <label class="col-xs-12 col-sm-3 pl-0" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
+      {% crispy_field field 'class' 'col' %}
+    </div>
+    {% if forloop.counter == 6 %}
+    <div class="row">
+			<div class="col px-0 my-2">
+				<h3 class="px-4 py-2 border border-success rounded">
 					Datos de Pago
 				</h3>
-
-				<label for="MetodoPago" class="col-sm-3 col-form-label"
-					>Forma de Pago</label
-				>
-				<select id="tipos_pago" name="tipos_pago">
-					<option value="Efectivo">Efectivo</option>
-					<option value="Tarjeta VISA">Tarjeta VISA</option>
-				</select>
-				<br />
-
-				<label for="Monto" class="col-sm-3 col-form-label">Monto</label>
-				<input type="number" name="monto" id="txt_monto" />
-				<br />
-
-				<label for="Numero Tarjeta" class="col-sm-3 col-form-label"
-					>Numero Tarjeta</label
-				>
-				<input type="number" name="num_tarjeta" id="txt_num_tarjeta" />
-				<br />
-
-				<label for="Nombre del Titular" class="col-sm-3 col-form-label"
-					>Nombre del Titular</label
-				>
-				<input type="text" name="nom_titular" id="txt_nom_titular" />
-				<br />
-
-				<label for="Apellido del Titular" class="col-sm-3 col-form-label"
-					>Apellido del Titular</label
-				>
-				<input type="text" name="ape_titular" id="txt_ape_titular" />
-				<br />
-
-				<label for="Fecha de Vencimiento" class="ml-3"
-					>Fecha de Vencimiento</label
-				>
-				<input type="date" name="fecha_vec" id="date_fecha_vec" />
-				<br />
-
-				<label for="CVC" class="col-sm-3 col-form-label">CVC</label>
-				<input type="number" name="cvc" id="txt_cvc" />
-				<br />
-			</div>
-		</div>
-		<div class="row my-2">
-			<div class="col">
-				<h3
-					style="
-						background-color: MediumSeaGreen;
-						padding: 5px;
-						padding: 8px;
-						border-radius: 25px;
-					"
-				>
-					Otros
-				</h3>
-
-				<label for="Momento a Recibir" class="col-sm-3 col-form-label"
-					>Momento a Recibir</label
-				>
-				<select id="opc_recepcion" name="opc_recepcion">
-					<option value="Lo antes posible">Lo antes posible</option>
-					<option value="Determinar fecha y hora"
-						>Determinar fecha y hora</option
-					>
-				</select>
-				<br />
-
-				<label for="Fecha y Hora" class="col-sm-3 col-form-label"
-					>Fecha y Hora</label
-				>
-				<input
-					type="datetime-local"
-					name="fecha_recibir"
-					id="date_fecha_recibir"
-				/>
-				<br />
-
-				<button type="button" class="btn btn-primary mt-4 float-right mx-2">
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+<div class="row">
+  <div class="col">
+				<button type="button" class="btn btn-primary mt-4 float-right ml-2">
 					Confirmar Pedido
 				</button>
 				<button type="button" class="btn btn-secondary mt-4 float-right">
@@ -157,4 +54,117 @@
 	</div>
 </div>
 
+<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="modal-body container-fluid needs-validation" id="cardForm">
+        {% for field in card_form.visible_fields %}
+        <div class="form-group row">
+          <label class="col-xs-12 col-sm-3" for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {% crispy_field field 'class' 'col mx-3' %}
+          <div class="invalid-feedback mx-3" id="feedback-{{field.name}}">
+
+          </div>
+        </div>
+      {% endfor %}
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+  $('#id_payment_method').on('change', function (e) {
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    if (valueSelected == "T"){
+      $("#exampleModalScrollable").modal('show')
+    }
+  });
+
+(function() {
+'use strict';
+window.addEventListener('load', function() {
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.getElementsByClassName('needs-validation');
+  // Loop over them and prevent submission
+  var validation = Array.prototype.filter.call(forms, function(form) {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (form.checkValidity() === true && $('#cardForm').find('input.is-invalid').length === 0) {
+          $("#exampleModalScrollable").modal('hide')
+        }
+      //form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+  $("#id_number").focusout(function() {
+    var value = $(this).val(),
+      input = $(this),
+      invalidDiv = $("#feedback-number")
+      input.removeClass("is-valid")
+      input.removeClass("is-invalid")
+    if (/[^0-9-]+/.test(value)) {
+      invalidDiv.html("Ingrese solo numeros")
+      input.addClass("is-invalid")
+        return false;
+    }
+
+    value = value.replace(/\D/g, "");
+
+    if (/^(4)/.test(value)) { //visa
+      if (value.length != 16){
+        invalidDiv.html("Cantidad incorrecta de numeros")
+        input.addClass("is-invalid")
+      } else {
+        input.addClass("is-valid")
+        invalidDiv.html("")
+      }
+      return;
+    }
+    input.addClass("is-invalid")
+    invalidDiv.html("La tarjeta ingresada no es VISA")
+  });
+
+  $("#id_cvc").focusout(function() {
+    var value = $(this).val(),
+      input = $(this),
+      invalidDiv = $("#feedback-cvc");
+      var myRe = /^[0-9]{3,4}$/;
+     if(myRe.test(value)){
+       input.removeClass("is-invalid")
+       input.addClass("is-valid")
+       invalidDiv.html("")
+        return false;
+     } else{
+       input.removeClass("is-valid")
+       input.addClass("is-invalid")
+       invalidDiv.html("CVC invalido")
+         return true;  //valid cvv number
+      }
+  })
+
+  $("#id_immediate_delivery").on('change', function (e) {
+    var optionSelected = $("option:selected", this);
+    var valueSelected = this.value;
+    if (valueSelected == 'false'){
+      $("#id_delivery_time").parent(".form-group").removeClass("d-none")
+    }
+  });
+
+</script>
 {% endblock %}

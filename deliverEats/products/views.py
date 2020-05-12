@@ -8,7 +8,7 @@ from operator import attrgetter
 from django.views import generic
 from . import custom
 # Forms
-from .forms import CategoryForm, ProductForm, PublicityForm, ImageForm, ProductDetailForm, OrderForm
+from .forms import CategoryForm, ProductForm, PublicityForm, ImageForm, ProductDetailForm, OrderForm, CardForm
 
 # Models
 from .models import Category, Product, Publicity, Image, ProductDetail
@@ -236,4 +236,5 @@ class PublicityDetailView(generic.DetailView):
 # TP5
 def create_Order(request):
     form = OrderForm()
-    return render(request, 'products/create_order.html', {'form': form})
+    card_form = CardForm()
+    return render(request, 'products/create_order.html', {'form': form, 'card_form':card_form})

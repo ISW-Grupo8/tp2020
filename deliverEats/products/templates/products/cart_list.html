@@ -15,9 +15,7 @@
 <!--Boton para comprar productos-->
 <div class="row">
     <div class="col-md-12 m-auto order-md-1 p-2 text-right">
-        <form action="{% url 'products:buy_products_from_cart' %}" method="post">{% csrf_token %}
-            <button class="btn btn-outline-dark">Comprar productos</button>
-        </form>
+      <a href="{% url 'products:create_order' %}" class="btn btn-outline-dark">Comprar productos</a>
     </div>
 </div>
 {% endblock app_content %}

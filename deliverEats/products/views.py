@@ -4,6 +4,7 @@ from datetime import datetime
 from django.db.models import Q
 from operator import attrgetter
 
+from django.contrib.auth.decorators import login_required
 # Views
 from django.views import generic
 from . import custom
@@ -234,7 +235,10 @@ class PublicityDetailView(generic.DetailView):
     template_name = APP_NAME + '/publicity_detail.html'
 
 # TP5
+@login_required
 def create_Order(request):
-    form = OrderForm()
-    card_form = CardForm()
-    return render(request, 'products/create_order.html', {'form': form, 'card_form':card_form})
+    if request.user.client.shopping_cart.all().exists():
+        form = OrderForm()
+        card_form = CardForm()
+        return render(request, 'products/create_order.html', {'form': form, 'card_form':card_form})
+    return render(request, 'products/no_product.html')

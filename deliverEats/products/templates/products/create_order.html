@@ -92,18 +92,33 @@
 {% endblock %}
 
 {% block scripts %}
-
+<script src="https://kit.fontawesome.com/64e7933841.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js" integrity="sha256-C66CaAImteEKZPYvgng9j10J/45e9sAuZyfPYCwp4gE=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
 
 <script type="text/javascript">
+  $.fn.datetimepicker.Constructor.Default = $.extend({}, $.fn.datetimepicker.Constructor.Default, {
+              icons: {
+                  time: 'far fa-clock',
+                  date: 'far fa-calendar',
+                  up: 'fas fa-arrow-up',
+                  down: 'fas fa-arrow-down',
+                  previous: 'fas fa-chevron-left',
+                  next: 'fas fa-chevron-right',
+                  today: 'fas fa-calendar-check-o',
+                  clear: 'fas fa-trash',
+                  close: 'fas fa-times'
+              } });
+
   $(function () {
     $('#id_delivery_time').datetimepicker({
-      'minDate': moment()
+      stepping: 60,
+      minDate: moment().valueOf()
     });
+
     $('#id_due_date').datetimepicker({
-      'minDate': moment(),
+      'minDate': moment().valueOf(),
       'viewMode': 'years',
       'format': 'MM/YYYY'
     });

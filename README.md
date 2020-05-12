@@ -14,20 +14,9 @@
 4. Escriban un glosario al final del documento.
 5. Implementar el repositorio planteado en una herramienta de acceso público.
 
-## Estructura de directorios:
-![alt text][estructura]
-
-[estructura]: https://github.com/ISW-Grupo8/tp2020/blob/master/images/estructura.png_24-04-2020.png "Arbol de directorios"
-
 ## Regla de nombrado para ítems de configuración:
 \<ID>\_\<Nombre>\_\<Datetime>.\<extension>
 
 - ID es único para cada Ítem de configuración
 - Nombre es una palabra clave o frase descriptiva del IC
 - Datetime es la fecha y hora de creación
-
-#### Los ítems de configuración tienen el directorio "CIs" como directorio base.
-
-## Notas: 
-- Los directorios no presentan el formato descrito en las reglas de nombrado porque no los consideramos ítems de configuración. 
-La justificación de esto es que no van a ser elementos susceptibles a cambios una vez creados.

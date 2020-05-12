@@ -1,5 +1,6 @@
 {% extends 'products/base.html' %}
 {% load crispy_forms_field %}
+
 {% block app_content %}
 
 <style>
@@ -29,7 +30,11 @@
 
     <div class="form-group row {% if forloop.counter == 6 %}d-none{% endif %}">
       <label class="col-xs-12 col-sm-3 pl-0" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
+      {% if forloop.counter == 6 %}
+      {% crispy_field field 'class' 'col datetimepicker-input' 'data-toggle' "datetimepicker" 'data-target' "#id_delivery_time" %}
+      {% else %}
       {% crispy_field field 'class' 'col' %}
+      {% endif %}
     </div>
     {% if forloop.counter == 6 %}
     <div class="row">
@@ -67,7 +72,11 @@
         {% for field in card_form.visible_fields %}
         <div class="form-group row">
           <label class="col-xs-12 col-sm-3" for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {% if field.auto_id == "id_due_date" %}
+          {% crispy_field field 'class' 'col mx-3' 'data-toggle' "datetimepicker" 'data-target' "#id_due_date" %}
+          {% else %}
           {% crispy_field field 'class' 'col mx-3' %}
+          {% endif %}
           <div class="invalid-feedback mx-3" id="feedback-{{field.name}}">
 
           </div>
@@ -84,7 +93,22 @@
 {% endblock %}
 
 {% block scripts %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js" integrity="sha256-C66CaAImteEKZPYvgng9j10J/45e9sAuZyfPYCwp4gE=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
 <script type="text/javascript">
+  $(function () {
+    $('#id_delivery_time').datetimepicker({
+      'minDate': moment()
+    });
+    $('#id_due_date').datetimepicker({
+      'minDate': moment(),
+      'viewMode': 'years',
+      'format': 'MM/YYYY'
+    });
+  });
   $('#id_payment_method').on('change', function (e) {
     var optionSelected = $("option:selected", this);
     var valueSelected = this.value;

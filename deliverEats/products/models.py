@@ -90,7 +90,7 @@ class Order(models.Model):
 class Card(models.Model):
     # order = models.OneToOneField('Order', name="Orden", on_delete=models.CASCADE)
     number = models.PositiveIntegerField(u'Numero de tarjeta')
-    name = models.CharField(u'Nombre del titular', max_length=40)
-    surname = models.CharField(u'Apellido del titular', max_length=40)
     due_date = models.DateField(u'Fecha de vencimiento')
     cvc = models.PositiveIntegerField(u'CVC')
+    name = models.CharField(u'Nombre del titular', max_length=40)
+    surname = models.CharField(u'Apellido del titular', max_length=40)

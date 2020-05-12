@@ -13,14 +13,14 @@
 	<form class="container-fluid">
 		<div class="row my-2">
 			<div class="col">
-				<h1 class="display-4" style="padding: 10px;">
-					Checkout
+				<h1 class="display-4 text-center" style="padding: 10px;">
+					Realizar Pedido
 				</h1>
 			</div>
 		</div>
 		<div class="row my-2">
 			<div class="col px-0">
-				<h3 class="px-4 py-2 border border-success rounded">
+				<h3 class="px-4 py-2 border rounded">
 					Dirección
 				</h3>
       </div>
@@ -30,7 +30,7 @@
     {% if field.auto_id == "id_payment_method"%}
     <div class="row">
       <div class="col px-0 my-2">
-        <h3 class="px-4 py-2 border border-success rounded">
+        <h3 class="px-4 py-2 border rounded">
           Datos de Pago
         </h3>
       </div>
@@ -199,7 +199,7 @@ window.addEventListener('load', function() {
   $("#id_immediate_delivery").on('change', function (e) {
     var optionSelected = $("option:selected", this);
     var valueSelected = this.value;
-    if (valueSelected == 'false'){
+    if (valueSelected == 'False'){
       $("#id_delivery_time").parent(".form-group").removeClass("d-none")
     }
   });

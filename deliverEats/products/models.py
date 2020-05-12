@@ -82,9 +82,13 @@ class Order(models.Model):
 
 #     Forma de pago
     PAYMENT_METHOD = (('E', 'Efectivo'), ('T', 'Tarjeta'))
-    immediate_delivery = models.BooleanField('Recibir lo antes posible', null=True)
+    IMMEDIATE_DELIVERY = ((True, 'Sí'), (False, 'No'))
+    immediate_delivery = models.BooleanField('Recibir lo antes posible', choices=IMMEDIATE_DELIVERY, default=IMMEDIATE_DELIVERY[0])
+
+    # immediate_delivery = models.BooleanField('Recibir lo antes posible',default=True,  null=True)
     delivery_time = models.DateTimeField(u'Fecha y hora de entrega', null=True, blank=True)
     payment_method = models.CharField(u'Metodo de pago', choices=PAYMENT_METHOD, max_length=1)
+    payment_amount = models.PositiveIntegerField(u'¿Con cuanto vas a pagar?')
 
 
 class Card(models.Model):

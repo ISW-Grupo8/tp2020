@@ -240,5 +240,7 @@ def create_Order(request):
     if request.user.client.shopping_cart.all().exists():
         form = OrderForm()
         card_form = CardForm()
+        form.fields['payment_amount'].initial = int(round(request.user.client.total))
+        form.fields['payment_amount'].min_value = int(round(request.user.client.total))
         return render(request, 'products/create_order.html', {'form': form, 'card_form':card_form})
     return render(request, 'products/no_product.html')

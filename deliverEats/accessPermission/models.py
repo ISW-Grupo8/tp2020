@@ -24,6 +24,9 @@ class Client(models.Model):
             total += product_detail.total
         return total
 
+    def get_str_total(self):
+        return str(int(round(self.total)))
+
     def buy_all_items(self):
         for product_detail in self.shopping_cart.all():
             self.shopping_history.add(product_detail)

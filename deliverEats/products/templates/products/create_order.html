@@ -37,7 +37,7 @@
       </div>
     </div>
     {% endif %}
-    <div class="form-group row {% if forloop.counter == 6 %}d-none{% endif %}">
+    <div class="form-group row {% if field.auto_id == 'id_delivery_time' or field.auto_id == 'id_payment_amount' %}d-none{% endif %}">
       <label class="col-xs-12 col-sm-3 pl-0" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
       {% if field.auto_id == "id_delivery_time" %}
       {% crispy_field field 'class' 'col datetimepicker-input' 'data-toggle' "datetimepicker" 'data-target' "#id_delivery_time" %}
@@ -112,6 +112,7 @@
               } });
 
   $(function () {
+    $("#id_payment_amount").attr('min',"{{request.user.client.get_str_total}}")
     $('#id_delivery_time').datetimepicker({
       stepping: 60,
       minDate: moment().valueOf()
@@ -128,6 +129,8 @@
     var valueSelected = this.value;
     if (valueSelected == "T"){
       $("#exampleModalScrollable").modal('show')
+    } else if (valueSelected == "E") {
+      $("#id_payment_amount").parent(".form-group").removeClass("d-none")
     }
   });
 

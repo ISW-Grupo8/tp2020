@@ -87,7 +87,7 @@ class Order(models.Model):
     delivery_time = models.DateTimeField(u'Fecha y hora de entrega', null=True, blank=True)
     PAYMENT_METHOD = (('E', 'Efectivo'), ('T', 'Tarjeta'))
     payment_method = models.CharField(u'Metodo de pago', choices=PAYMENT_METHOD, max_length=1)
-    payment_amount = models.PositiveIntegerField(u'¿Con cuanto vas a pagar?')
+    payment_amount = models.PositiveIntegerField(u'¿Con cuanto vas a pagar?', null=True, blank=True)
 
 
 class Card(models.Model):

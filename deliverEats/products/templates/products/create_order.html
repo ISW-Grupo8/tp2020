@@ -27,24 +27,23 @@
     </div>
 
     {% for field in form.visible_fields %}
-
+    {% if field.auto_id == "id_payment_method"%}
+    <div class="row">
+      <div class="col px-0 my-2">
+        <h3 class="px-4 py-2 border border-success rounded">
+          Datos de Pago
+        </h3>
+      </div>
+    </div>
+    {% endif %}
     <div class="form-group row {% if forloop.counter == 6 %}d-none{% endif %}">
       <label class="col-xs-12 col-sm-3 pl-0" for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>
-      {% if forloop.counter == 6 %}
+      {% if field.auto_id == "id_delivery_time" %}
       {% crispy_field field 'class' 'col datetimepicker-input' 'data-toggle' "datetimepicker" 'data-target' "#id_delivery_time" %}
       {% else %}
       {% crispy_field field 'class' 'col' %}
       {% endif %}
     </div>
-    {% if forloop.counter == 6 %}
-    <div class="row">
-			<div class="col px-0 my-2">
-				<h3 class="px-4 py-2 border border-success rounded">
-					Datos de Pago
-				</h3>
-      </div>
-    </div>
-    {% endif %}
     {% endfor %}
 <div class="row">
   <div class="col">

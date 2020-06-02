@@ -72,18 +72,16 @@ class Image(models.Model):
 
 
 class Order(models.Model):
-    CITY_CHOICES = ((1, "Córdoba"), (2, "Río Cuarto"), (3, "Oncativo"), (4, "CarlosPaz"), (5, "Alta Gracia"),
-                    (6, "Villa General Belgrano"), (7, "Río Tercero"), (8, "Villa Giardino"), (9, "Oliva"),
-                    (10, "Río Segundo"))
+    CITY_CHOICES = ((1, "Córdoba Capital"), (2, "Villa Allende"), (3, "Rio Ceballos"))
     city = models.PositiveIntegerField(u'Ciudad', choices=CITY_CHOICES)
     street = models.CharField(u'Calle', max_length=40)
-    street_number = models.CharField(u'Numero', max_length=10)
+    street_number = models.PositiveIntegerField(u'Numero')
     reference = models.TextField(u'referencia', max_length=100, null=True, blank=True)
 
 #     Forma de pago
     IMMEDIATE_DELIVERY = ((True, 'Sí'), (False, 'No'))
-    immediate_delivery = models.BooleanField('Recibir lo antes posible', choices=IMMEDIATE_DELIVERY,
-                                             default=IMMEDIATE_DELIVERY[0])
+    immediate_delivery = models.CharField('Recibir lo antes posible', choices=IMMEDIATE_DELIVERY,
+                                          max_length=10, default=IMMEDIATE_DELIVERY[0])
     delivery_time = models.DateTimeField(u'Fecha y hora de entrega', null=True, blank=True)
     PAYMENT_METHOD = (('E', 'Efectivo'), ('T', 'Tarjeta'))
     payment_method = models.CharField(u'Metodo de pago', choices=PAYMENT_METHOD, max_length=1)
@@ -95,5 +93,4 @@ class Card(models.Model):
     number = models.PositiveIntegerField(u'Numero de tarjeta')
     due_date = models.DateField(u'Fecha de vencimiento')
     cvc = models.PositiveIntegerField(u'CVC')
-    name = models.CharField(u'Nombre del titular', max_length=40)
-    surname = models.CharField(u'Apellido del titular', max_length=40)
+    name = models.CharField(u'Nombre completo del titular', max_length=80)
